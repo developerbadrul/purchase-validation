@@ -1,5 +1,6 @@
 
 let totalPrice = 0;
+
 function updatePrice(e) {
     const addedItemsList = document.getElementById('added-items');
     // console.log(e.parentNode.childNodes[3].childNodes[7].childNodes[1].innerText);
@@ -26,21 +27,20 @@ function updatePrice(e) {
     if (totalPrice >= 200) {
         const couponApplyBtn = document.getElementById('coupon-apply-btn');
         couponApplyBtn.removeAttribute('disabled');
-
-        couponApplyBtn.addEventListener('click', function () {
-            const couponValue = document.getElementById('coupon-field').value;
-            const discount = document.getElementById('discount');
-            const grandTotal = document.getElementById('grand-total');
-            if (couponValue === 'SELL200') {
-                console.log(totalPrice, 'befor');
-                totalPrice = totalPrice - 200;
-                console.log(totalPrice, 'after discount');
-                // grandTotal.innerText = totalPrice ;
-                discount.innerText = 200;
-            }
-        })
+        // document.getElementById('coupon-apply-btn').addEventListener('click', function () {
+        //     const couponValue = document.getElementById('coupon-field').value;
+        //     const discount = document.getElementById('discount');
+        //     const grandTotal = document.getElementById('grand-total');
+        //     if (couponValue === 'SELL200') {
+        //         console.log(totalPrice, 'befor');
+        //         const discountValue = (totalPrice * 20) / 100;
+        //         totalPrice = totalPrice - discountValue;
+        //         console.log(totalPrice, 'after discount');
+        //         grandTotal.innerText = totalPrice;
+        //         discount.innerText = discountValue;
+        //     }
+        // })
     }
-
 
     if (totalPrice !== 0) {
         const purchaseBtn = document.getElementById('purchase-btn');
@@ -50,5 +50,23 @@ function updatePrice(e) {
             my_modal_3.showModal()
         })
     }
+
 }
 
+function applyCoupon() {
+    const couponValue = document.getElementById('coupon-field').value;
+    const discount = document.getElementById('discount');
+    const grandTotal = document.getElementById('grand-total');
+    if (couponValue === 'SELL200') {
+        console.log(totalPrice, 'befor');
+        const discountValue = (totalPrice * 20) / 100
+        totalPrice = totalPrice - discountValue;
+        console.log(totalPrice, 'after discount');
+        grandTotal.innerText = totalPrice;
+        discount.innerText = discountValue;
+    }
+};
+
+function goHome(){
+    location.href="index.html"
+}

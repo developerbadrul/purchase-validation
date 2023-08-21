@@ -255,7 +255,7 @@
                         <input id="coupon-field" type="text" placeholder="coupon code"
                             class=" border-gray-200 border-2 rounded-md">
                         <!-- <button class="bg-[#e527b2c2] text-white font-semibold px-3 py-2 rounded-md">Apply</button> -->
-                        <button id="coupon-apply-btn" disabled="true"
+                        <button onclick="applyCoupon()" id="coupon-apply-btn" disabled="true"
                             class="btn bg-[#e527b2c2] text-white font-semibold px-3 py-2 rounded-md">Apply</button>
                     </div>
                     <!-- added item -->
@@ -267,9 +267,9 @@
                     <hr>
                     <!-- total price -->
                     <div class="text-xl font-medium my-3">
-                        <p>Total Price : <span id="total-Price">0</span></p>
-                        <p>Discount : <span id="discount">0</span></p>
-                        <p>Total: <span id="grand-total">0</span></p>
+                        <p>Total Price : <span id="total-Price">0</span> TK</p>
+                        <p>Discount : <span id="discount">0</span> TK</p>
+                        <p>Total: <span id="grand-total">0</span> TK</p>
                     </div>
                     <hr>
                     <!-- <button class="bg-[#E527B2] text-white px-4 py-2 rounded-md w-full font-bold">Make Purchase</button>  -->
@@ -288,8 +288,8 @@
                     </div>
                     <p class="py-4 text-3xl text-center">Congratulations</p>
                     <p class="py-4 text-center">Your Purchase the product</p>
-                    <button
-                        class="btn mx-auto block bg-[#E527B2] text-white px-4 py-2 rounded-md font-bold">Go Home</button>
+                    <button onclick="goHome()" id="go-home" class="btn mx-auto block bg-[#E527B2] text-white px-4 py-2 rounded-md font-bold">Go
+                        Home</button>
                 </form>
             </dialog>
         </section>
